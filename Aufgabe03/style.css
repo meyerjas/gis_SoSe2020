@@ -1,0 +1,64 @@
+body {
+    background-image: url(bg.png); 
+    font-size: 1.0em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width:800px; 
+    margin-left:-400px;
+    position:absolute;
+    left:50%;
+}
+
+h1 {
+    background: Lightsalmon;
+    width: 800px;
+    padding: 10px;
+    border: 5px solid midnightblue;
+    margin: 10;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h2 {
+    color: firebrick;  
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    background-color: black;
+    width: 300px;
+    left: 62%;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 10px;  
+}
+
+nav a {
+    color: white;
+    font-size: large;
+}
+
+#aktuell {
+    color: lightsalmon;
+}
+
+a:hover {
+    color: firebrick;
+}
+
+.textinput {
+    width: 200px;
+    padding: 10px;
+    border: 4px solid midnightblue;
+    margin: 5px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: silver;
+}
+
+#senden {
+    color: midnightblue;
+    font-size: large;
+}
+

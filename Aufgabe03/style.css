@@ -43,8 +43,18 @@ nav a {
     color: lightsalmon;
 }
 
-a:hover {
+nav a:hover {
     color: firebrick;
+}
+
+.header img {
+    height: 60px;
+    width: 60px;
+    margin-top: 100px;
+}
+.header img:hover {
+    width: 65px;
+    height: 65px; 
 }
 
 .textinput {
@@ -61,4 +71,12 @@ a:hover {
     color: midnightblue;
     font-size: large;
 }
+
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 

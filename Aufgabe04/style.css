@@ -96,7 +96,7 @@ nav#menu {
    line-height: 60px;
  }
 
- div.Artikel{
+ .Artikel {
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    text-align: center;
    background-color: lightgoldenrodyellow;
@@ -107,11 +107,11 @@ nav#menu {
    height: 350px;
    float: left;
  }
- div.Artikel>img{
+ div.Artikel>img {
     width: 200px;
  }
 
- div.Artikel>p{
+ div.Artikel>p {
     font-size: small;
  }
 

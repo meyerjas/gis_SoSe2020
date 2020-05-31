@@ -96,7 +96,7 @@ namespace aufgabe05 {
         Name: "Scott",
         Beschreibung: "Ein prächtiges schottisches Hochlandrind.",
         preis: 1700.00,
-        imgSrc: "Scott.jpg",
+        imgSrc: "scott.jpg",
         Kategorie: "Kühe"
     };
 

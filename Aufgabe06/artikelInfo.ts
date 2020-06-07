@@ -1,6 +1,6 @@
-namespace aufgabe05 {
+namespace aufgabe06 {
 
-    export interface Artikel {
+    interface Artikel {
         Name: string;
         Beschreibung: string;
         preis: number;

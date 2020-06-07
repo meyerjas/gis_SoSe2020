@@ -1,12 +1,12 @@
 body {
     background-image: url(wiese.jpg);
- }
- 
- #logo{
+}
+
+#logo {
     border-radius: 100%;
- }
- 
- #logobox {
+}
+
+#logobox {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
     text-align: center;
@@ -17,71 +17,70 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
- }
- 
- nav#menu {
-     font-size: 14px;
-     background-color: olive;
-     margin-bottom: 10px;
-     padding: 0 1em;
-     position: relative;
-     height: 60px;
-     overflow: hidden;
-     border-radius: 25px;
-     
-  }
- 
-  nav#menu ul {
+}
+
+nav#menu {
+    font-size: 14px;
+    background-color: olive;
+    margin-bottom: 10px;
+    padding: 0 1em;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+nav#menu ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
     max-height: 120px;
     position: relative;
- }
- 
-   nav#menu ul li {
-     display: inline-block;
-  }
- 
-   nav#menu ul li:last-child {
-     position: absolute;
-     right: 0;
-     top: 0;
-     bottom: 60px;
-     background-image: linear-gradient(to right, rgba(236, 240, 241, 0) 0, #fff 2em);
-     padding-left: 3em;
-  }
- 
-   nav#menu ul li a {
-     display: inline-block;
-     padding: 0 1em;
-     color:white;
-     font-weight: 700;
-     letter-spacing: 0.1em;
-     text-decoration: none;
-     text-transform: uppercase;
-     white-space: nowrap;
-     line-height: 60px;
-  }
- 
-   nav#menu ul li a:hover {
-     background-color: rgba(51, 51, 51, 0.08);
-  }
- 
-   nav#menu:target {
-     height: auto;
-     padding: 0;
-  }
- 
-   nav#menu:target ul {
-     max-height: none;
-  }
- 
-   nav#menu:target ul li {
-     display: block;
-  }
+}
 
-  h2 {   
+nav#menu ul li {
+    display: inline-block;
+}
+
+nav#menu ul li:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 60px;
+    background-image: linear-gradient(to right, rgba(236, 240, 241, 0) 0, #fff 2em);
+    padding-left: 3em;
+}
+
+nav#menu ul li a {
+    display: inline-block;
+    padding: 0 1em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+nav#menu ul li a:hover {
+    background-color: rgba(51, 51, 51, 0.08);
+}
+
+nav#menu:target {
+    height: auto;
+    padding: 0;
+}
+
+nav#menu:target ul {
+    max-height: none;
+}
+
+nav#menu:target ul li {
+    display: block;
+}
+
+h2 {
     font-size: 14px;
     margin-bottom: 10px;
     padding: 0 1em;
@@ -98,16 +97,15 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     line-height: 60px;
-  }
-  
-  .Artikel {
+}
+
+.Artikel {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    
-  }
+}
 
-  .Artikel > div {
+.Artikel>div {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     background-color: lightgoldenrodyellow;
@@ -116,89 +114,84 @@ body {
     margin: 20px;
     width: 200px;
     height: 350px;
-  }
+}
 
-  div.Artikel> div img {
-     width: 200px;
-  }
- 
-  div.Artikel.Name {
-      font-size: 30px;
-  }
+div.Artikel>div img {
+    width: 200px;
+}
 
-  #ZählerAnzeige {
-     background: lightgoldenrodyellow;
-     color: black;
-     position: fixed;
-     border-radius: 100%;
-     text-align: center;
-     
+div.Artikel.Name {
+    font-size: 30px;
+}
 
-   }
-
-
- 
-  @media screen and (max-width:1024px) {
-    .Artikel > div {
-       width: 230px;
-       height: 400px;
-  }
- 
-  div.Artikel>img{
-    width: 250px;
-  }
- }
- 
-  @media screen and (max-width:600px) {
-      
-   #logobox {
+#zählerAnzeige {
+    background: lightgoldenrodyellow;
+    border-radius: 100%;
+    width: 15px;
+    padding: 2px;
+    color: black;
+    position: relative;
+    top: -45px;
+    left: 60px;
     font-size: 15px;
+    text-align: center;
+}
+
+@media screen and (max-width:1024px) {
+    .Artikel>div {
+        width: 230px;
+        height: 400px;
+    }
+    div.Artikel>img {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #logobox {
+        font-size: 15px;
     }
     #logobox img {
-       width: 85px;
+        width: 85px;
     }
-
     nav#menu {
-       font-size: 12px;
-       font-weight: 200;
-       margin-bottom: 10px;
-       padding: 0 1em;
-       position: relative;
-       height: 60px;
-       overflow: hidden;
-       border-radius: 25px;
+        font-size: 12px;
+        font-weight: 200;
+        margin-bottom: 10px;
+        padding: 0 1em;
+        position: relative;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 25px;
     }
-
     #menu img {
-       width: 40px;
-       height: 50px;
+        width: 40px;
+        height: 50px;
     }
- 
     h2 {
-       font-size: 12px;
-       font-weight: 200;
+        font-size: 12px;
+        font-weight: 200;
     }
-    div.Artikel> div {
-       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-       text-align: center;
-       background-color: lightgoldenrodyellow;
-       padding: 20px;
-       border-radius: 25px;
-       margin: 20px;
-       width: 200px;
-       height: 350px;
-     }
-     div.Artikel> div img{
+    div.Artikel>div {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        background-color: lightgoldenrodyellow;
+        padding: 20px;
+        border-radius: 25px;
+        margin: 20px;
         width: 200px;
-     }
-    
-     div.Artikel> div p{
+        height: 350px;
+    }
+    div.Artikel>div img {
+        width: 200px;
+    }
+    div.Artikel>div p {
         font-size: small;
-     }
-  }
- 
-  @media print {
-     body{
+    }
+}
+
+@media print {
+    body {
         background-color: white;
-     }
-  }
+    }
+}

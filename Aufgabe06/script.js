@@ -1,9 +1,13 @@
 "use strict";
-var aufgabe05;
-(function (aufgabe05) {
+var aufgabe06;
+(function (aufgabe06) {
     let kategorie = "Schafe";
-    for (let i = 0; i < aufgabe05.tier.length; i++) {
-        if (aufgabe05.tier[i].Kategorie == "Schafe") {
+    let gesamtPreis = 0;
+    document.getElementById("Schäflein")?.addEventListener("click", handlerBeGone);
+    document.getElementById("Kühlein")?.addEventListener("click", handlerBeGone);
+    document.getElementById("tierliebe")?.addEventListener("click", handlerBeGone);
+    for (let i = 0; i < aufgabe06.tier.length; i++) {
+        if (aufgabe06.tier[i].Kategorie == "Schafe") {
             kategorie = "Schafe";
         }
         else {
@@ -15,37 +19,60 @@ var aufgabe05;
         let newName = document.createElement("p");
         newName.setAttribute("class", "Name");
         newName.setAttribute("id", "Name" + i);
-        newName.innerText = aufgabe05.tier[i].Name;
+        newName.innerText = aufgabe06.tier[i].Name;
         document.getElementById("Artikel" + kategorie + i)?.appendChild(newName);
         let newpreis = document.createElement("preis");
-        newpreis.innerHTML = "€" + aufgabe05.tier[i].preis;
+        newpreis.innerHTML = "€" + aufgabe06.tier[i].preis;
         document.getElementById("Artikel" + kategorie + i)?.appendChild(newpreis);
         let newImg = document.createElement("img");
-        newImg.src = aufgabe05.tier[i].imgSrc;
-        newImg.setAttribute("alt", aufgabe05.tier[i].Name);
+        newImg.src = aufgabe06.tier[i].imgSrc;
+        newImg.setAttribute("alt", aufgabe06.tier[i].Name);
         document.getElementById("Artikel" + kategorie + i)?.appendChild(newImg);
         let newBeschreibung = document.createElement("p");
         newBeschreibung.setAttribute("class", "beschreibung");
-        newBeschreibung.innerHTML = aufgabe05.tier[i].Beschreibung;
+        newBeschreibung.innerHTML = aufgabe06.tier[i].Beschreibung;
         document.getElementById("Artikel" + kategorie + i)?.appendChild(newBeschreibung);
         let newButton = document.createElement("input");
         newButton.value = "Kaufen";
         newButton.type = "button";
+        newButton.setAttribute("artikelIndex", i.toString());
         document.getElementById("Artikel" + kategorie + i)?.appendChild(newButton);
         newButton.addEventListener("click", handlerWK);
     }
-})(aufgabe05 || (aufgabe05 = {}));
-let imWarenkorb = 0;
-let gesamtPreis = 0;
-let wkZahl = document.createElement("p");
-let zählerAnzeige = document.createElement("div");
-zählerAnzeige.id = "zählerAnzeige";
-function handlerWK(_event) {
-    if (imWarenkorb > 0) {
-        document.getElementById("Einkaufswagen")?.appendChild(zählerAnzeige);
+    let imWarenkorb = 0;
+    let zählerAnzeige = document.createElement("div");
+    zählerAnzeige.id = "zählerAnzeige";
+    document.getElementById("Einkaufswagen")?.appendChild(zählerAnzeige);
+    zählerAnzeige.innerHTML = imWarenkorb.toString();
+    if (imWarenkorb == 0) {
+        zählerAnzeige.style.display = "none";
     }
-    imWarenkorb++;
-    wkZahl.innerHTML = "" + imWarenkorb;
-    document.getElementById("newDiv")?.appendChild(wkZahl);
-}
+    else
+        zählerAnzeige.style.display = "block";
+    function handlerWK(_event) {
+        let target = _event.target;
+        let artikelIndex = parseInt(target.getAttribute("artikelIndex"));
+        zählerAnzeige.style.display = "block";
+        imWarenkorb++;
+        zählerAnzeige.innerHTML = "" + imWarenkorb;
+        gesamtPreis = aufgabe06.tier[artikelIndex].preis + gesamtPreis;
+        console.log("Gesamtpreis:" + gesamtPreis + "€");
+    }
+    function handlerBeGone(_event) {
+        let target = _event.target;
+        let kategorie = target.getAttribute("href");
+        if (kategorie == "#schafe") {
+            document.getElementById("Kühe")?.setAttribute("style", "display : none");
+            document.getElementById("Schafe")?.setAttribute("style", "display : flex");
+        }
+        else if (kategorie == "#kühe") {
+            document.getElementById("Schafe")?.setAttribute("style", "display : none");
+            document.getElementById("Kühe")?.setAttribute("style", "display : flex");
+        }
+        else {
+            document.getElementById("Schafe")?.setAttribute("style", "display : flex");
+            document.getElementById("Kühe")?.setAttribute("style", "display : flex");
+        }
+    }
+})(aufgabe06 || (aufgabe06 = {}));
 //# sourceMappingURL=script.js.map

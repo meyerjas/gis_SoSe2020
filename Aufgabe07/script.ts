@@ -80,6 +80,8 @@ namespace aufgabe07 {
     else
         zählerAnzeige.style.display = "block";
 
+
+
     function handlerWK(_event: Event): void {
         let target: HTMLElement = (<HTMLElement>_event.target);
         let artikelIndex: number = parseInt(target.getAttribute("artikelIndex")!);
@@ -91,6 +93,8 @@ namespace aufgabe07 {
         gesamtPreis = tier[artikelIndex].preis + gesamtPreis;
         console.log("Gesamtpreis:" + gesamtPreis + "€");
     }
+
+
 
     function handlerBeGone(_event: Event): void {
         let target: HTMLElement = (<HTMLElement>_event.target);

@@ -1,0 +1,12 @@
+namespace aufgabe07 {
+
+
+
+
+
+
+
+
+
+    
+}

@@ -1,0 +1,13 @@
+[{ "Name": "Benno", "Beschreibung": "Benno ist ein starker, durchsetzungsfähiger Bock, der kerngesund ist und auf sein neues Zuhause wartet.", "preis": 250, "imgSrc": "Benno.jpg", "Kategorie": "Schafe" },
+    { "Name": "Boris", "Beschreibung": "Boris ist jung und aktiv.", "preis": 200, "imgSrc": "Boris.jpg", "Kategorie": "Schafe" },
+    { "Name": "Blitz", "Beschreibung": "Blitz frisst Gras blitzschnell.", "preis": 200, "imgSrc": "Blitz.jpg", "Kategorie": "Schafe" },
+    { "Name": "Conny", "Beschreibung": "Conny ist voller Lebensfreude und Tatendrang.", "preis": 210, "imgSrc": "Conny.jpg", "Kategorie": "Schafe" },
+    { "Name": "Lisl", "Beschreibung": "Lisl ist ein mutiges, temparamentvolles Schaf.", "preis": 205, "imgSrc": "Lisl.jpg", "Kategorie": "Schafe" },
+    { "Name": "Wollfram", "Beschreibung": "Wollfram hat sehr viel Wolle. Daraus kann man tolle Sachen machen.", "preis": 280, "imgSrc": "Wollfram.jpg", "Kategorie": "Schafe" },
+    { "Name": "Abba", "Beschreibung": "Abba ist die Königin der Tanzkühe.", "preis": 750, "imgSrc": "Abba.jpg", "Kategorie": "Kühe" },
+    { "Name": "Beauty", "Beschreibung": "Eine wunderschöne Kuh.", "preis": 700, "imgSrc": "Beauty.jpg", "Kategorie": "Kühe" },
+    { "Name": "Milka", "Beschreibung": "Die Menschen werden von nah und fern kommen, um sie zu sehen.", "preis": 800, "imgSrc": "milka.jpg", "Kategorie": "Kühe" },
+    { "Name": "Minni", "Beschreibung": "Minni ist eine gutmütige und treue Milchkuh.", "preis": 500, "imgSrc": "Minni.jpg", "Kategorie": "Kühe" },
+    { "Name": "Scott", "Beschreibung": "Ein prächtiges schottisches Hochlandrind.", "preis": 1700, "imgSrc": "scott.jpg", "Kategorie": "Kühe" },
+    { "Name": "Wissa", "Beschreibung": "Eine einzigartige, vollkommen weiße Kuh. Gibt nur weiße Milch.", "preis": 1200, "imgSrc": "Wissa.jpg", "Kategorie": "Kühe" }
+]

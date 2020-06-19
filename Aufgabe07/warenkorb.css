@@ -19,13 +19,39 @@ body {
     align-items: center;
 }
 
-.Artikel {
+#gesamtPreis {
+    background-color: lightgoldenrodyellow;
+    padding: -1px 0px -1px 0px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    width: 300px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#abreissen {
+    background-color: lightgoldenrodyellow;
+    font-weight: bold;
+}
+
+#leeren {
+    text-align: center;
+}
+
+button {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: black solid 2px;
+}
+
+#TiereImWagen {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
 }
 
-.Artikel>div {
+#TiereImWagen>div {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     background-color: lightgoldenrodyellow;
@@ -33,13 +59,54 @@ body {
     border-radius: 25px;
     margin: 20px;
     width: 200px;
-    height: 350px;
+    height: 300px;
 }
 
-div.Artikel>div img {
+#TiereImWagen>div img {
     width: 200px;
 }
 
-div.Artikel.Name {
-    font-size: 30px;
+@media screen and (max-width:1024px) {
+    .Artikel>div {
+        width: 230px;
+        height: 400px;
+    }
+    div.Artikel>img {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #logobox {
+        font-size: 15px;
+    }
+    #logobox img {
+        width: 85px;
+    }
+    h2 {
+        font-size: 12px;
+        font-weight: 200;
+    }
+    div.Artikel>div {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        background-color: lightgoldenrodyellow;
+        padding: 20px;
+        border-radius: 25px;
+        margin: 20px;
+        width: 200px;
+        height: 350px;
+    }
+    div.Artikel>div img {
+        width: 200px;
+    }
+    div.Artikel>div p {
+        font-size: small;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
 }

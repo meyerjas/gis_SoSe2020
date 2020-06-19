@@ -1,6 +1,9 @@
 namespace aufgabe07 {
 
+    localStorage.clear();
+
     let gesamtPreis: number = 0;
+
     document.getElementById("Schäflein")?.addEventListener("click", handlerBeGone);
     document.getElementById("Kühlein")?.addEventListener("click", handlerBeGone);
     document.getElementById("tierliebe")?.addEventListener("click", handlerBeGone);
@@ -10,7 +13,7 @@ namespace aufgabe07 {
     async function loadProducts(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch(_url);
         let jsonArray: JSON = await response.json();
-        artikel = JSON.parse(JSON.stringify(jsonArray));
+        tier = JSON.parse(JSON.stringify(jsonArray));
         console.log("test");
     }
 
@@ -18,8 +21,6 @@ namespace aufgabe07 {
 
         let kategorie: string;
         await loadProducts("array.json");
-
-        console.log("bitte helfen Sie mir.");
 
         for (let i: number = 0; i < tier.length; i++) {
             if (tier[i].Kategorie == "Schafe") {
@@ -29,10 +30,9 @@ namespace aufgabe07 {
             }
 
             let newDiv: HTMLDivElement = document.createElement("div");
-
             newDiv.id = "Artikel" + kategorie + i;
-
             document.getElementById(kategorie)?.appendChild(newDiv);
+            newDiv.setAttribute("zähler", i.toString());
 
             let newName: HTMLParagraphElement = document.createElement("p");
             newName.setAttribute("class", "Name");
@@ -66,34 +66,48 @@ namespace aufgabe07 {
 
     let imWarenkorb: number = 0;
 
-
     let zählerAnzeige: HTMLDivElement = document.createElement("div");
     zählerAnzeige.id = "zählerAnzeige";
 
+    let j: number = 0;
+
     document.getElementById("Einkaufswagen")?.appendChild(zählerAnzeige);
-    zählerAnzeige.innerHTML = imWarenkorb.toString();
-
-
-    if (imWarenkorb == 0) {
-        zählerAnzeige.style.display = "none";
-    }
-    else
-        zählerAnzeige.style.display = "block";
-
-
+    
 
     function handlerWK(_event: Event): void {
+        imWarenkorb++;
         let target: HTMLElement = (<HTMLElement>_event.target);
         let artikelIndex: number = parseInt(target.getAttribute("artikelIndex")!);
-        zählerAnzeige.style.display = "block";
+        //zählerAnzeige.style.display = "block";
 
-        imWarenkorb++;
-        zählerAnzeige.innerHTML = "" + imWarenkorb;
+
+        if (localStorage.imWarenkorb) {
+            localStorage.imWarenkorb = Number(localStorage.imWarenkorb) + 1;
+        } else {
+            localStorage.imWarenkorb = 1;
+        }
+
+        console.log(localStorage.imWarenkorb);
+        zählerAnzeige.innerHTML = localStorage.imWarenkorb + "";
+
+        if (imWarenkorb == 0) {
+            zählerAnzeige.style.display = "none";
+        }
+        else
+            zählerAnzeige.style.display = "block";
 
         gesamtPreis = tier[artikelIndex].preis + gesamtPreis;
         console.log("Gesamtpreis:" + gesamtPreis + "€");
+
+        localStorage.setItem("gesamtPreis", gesamtPreis.toString());
+        
     }
 
+    let atrributeInLS: string = (<HTMLDivElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("zähler")!;
+    localStorage.setItem("foto" + j, tier[parseInt(atrributeInLS)].imgSrc + "");
+    localStorage.setItem("name" + j, tier[parseInt(atrributeInLS)].Name + "");
+    localStorage.setItem("preis" + j, tier[parseInt(atrributeInLS)].preis + "");
+    j++;
 
 
     function handlerBeGone(_event: Event): void {
@@ -116,6 +130,7 @@ namespace aufgabe07 {
         }
 
     }
+
 }
 
 

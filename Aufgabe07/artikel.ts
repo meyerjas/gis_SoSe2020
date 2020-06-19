@@ -7,5 +7,7 @@ namespace aufgabe07 {
         Kategorie: string;
     }
 
-    export let artikel: Artikel[];
+    export let tier: Artikel[];
+
+
 }

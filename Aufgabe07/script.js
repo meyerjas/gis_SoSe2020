@@ -1,6 +1,7 @@
 "use strict";
 var aufgabe07;
 (function (aufgabe07) {
+    localStorage.clear();
     let gesamtPreis = 0;
     document.getElementById("Schäflein")?.addEventListener("click", handlerBeGone);
     document.getElementById("Kühlein")?.addEventListener("click", handlerBeGone);
@@ -9,13 +10,12 @@ var aufgabe07;
     async function loadProducts(_url) {
         let response = await fetch(_url);
         let jsonArray = await response.json();
-        aufgabe07.artikel = JSON.parse(JSON.stringify(jsonArray));
+        aufgabe07.tier = JSON.parse(JSON.stringify(jsonArray));
         console.log("test");
     }
     async function reinMitEuch() {
         let kategorie;
         await loadProducts("array.json");
-        console.log("bitte helfen Sie mir.");
         for (let i = 0; i < aufgabe07.tier.length; i++) {
             if (aufgabe07.tier[i].Kategorie == "Schafe") {
                 kategorie = "Schafe";
@@ -26,6 +26,7 @@ var aufgabe07;
             let newDiv = document.createElement("div");
             newDiv.id = "Artikel" + kategorie + i;
             document.getElementById(kategorie)?.appendChild(newDiv);
+            newDiv.setAttribute("zähler", i.toString());
             let newName = document.createElement("p");
             newName.setAttribute("class", "Name");
             newName.setAttribute("id", "Name" + i);
@@ -53,22 +54,35 @@ var aufgabe07;
     let imWarenkorb = 0;
     let zählerAnzeige = document.createElement("div");
     zählerAnzeige.id = "zählerAnzeige";
+    let j = 0;
     document.getElementById("Einkaufswagen")?.appendChild(zählerAnzeige);
-    zählerAnzeige.innerHTML = imWarenkorb.toString();
-    if (imWarenkorb == 0) {
-        zählerAnzeige.style.display = "none";
-    }
-    else
-        zählerAnzeige.style.display = "block";
     function handlerWK(_event) {
+        imWarenkorb++;
         let target = _event.target;
         let artikelIndex = parseInt(target.getAttribute("artikelIndex"));
-        zählerAnzeige.style.display = "block";
-        imWarenkorb++;
-        zählerAnzeige.innerHTML = "" + imWarenkorb;
+        //zählerAnzeige.style.display = "block";
+        if (localStorage.imWarenkorb) {
+            localStorage.imWarenkorb = Number(localStorage.imWarenkorb) + 1;
+        }
+        else {
+            localStorage.imWarenkorb = 1;
+        }
+        console.log(localStorage.imWarenkorb);
+        zählerAnzeige.innerHTML = localStorage.imWarenkorb + "";
+        if (imWarenkorb == 0) {
+            zählerAnzeige.style.display = "none";
+        }
+        else
+            zählerAnzeige.style.display = "block";
         gesamtPreis = aufgabe07.tier[artikelIndex].preis + gesamtPreis;
         console.log("Gesamtpreis:" + gesamtPreis + "€");
+        localStorage.setItem("gesamtPreis", gesamtPreis.toString());
     }
+    let atrributeInLS = _event.currentTarget.parentElement.getAttribute("zähler");
+    localStorage.setItem("foto" + j, aufgabe07.tier[parseInt(atrributeInLS)].imgSrc + "");
+    localStorage.setItem("name" + j, aufgabe07.tier[parseInt(atrributeInLS)].Name + "");
+    localStorage.setItem("preis" + j, aufgabe07.tier[parseInt(atrributeInLS)].preis + "");
+    j++;
     function handlerBeGone(_event) {
         let target = _event.target;
         let kategorie = target.getAttribute("href");

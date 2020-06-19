@@ -78,8 +78,6 @@ namespace aufgabe07 {
         imWarenkorb++;
         let target: HTMLElement = (<HTMLElement>_event.target);
         let artikelIndex: number = parseInt(target.getAttribute("artikelIndex")!);
-        //zählerAnzeige.style.display = "block";
-
 
         if (localStorage.imWarenkorb) {
             localStorage.imWarenkorb = Number(localStorage.imWarenkorb) + 1;
@@ -100,14 +98,14 @@ namespace aufgabe07 {
         console.log("Gesamtpreis:" + gesamtPreis + "€");
 
         localStorage.setItem("gesamtPreis", gesamtPreis.toString());
+
+        let atrributeInLS: string = (<HTMLDivElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("zähler")!; 
+        localStorage.setItem("foto" + j, tier[parseInt(atrributeInLS)].imgSrc + "");
+        localStorage.setItem("name" + j, tier[parseInt(atrributeInLS)].Name + "");
+        localStorage.setItem("preis" + j, tier[parseInt(atrributeInLS)].preis + "");
+        j++;
         
     }
-
-    let atrributeInLS: string = (<HTMLDivElement>(<HTMLElement>_event.currentTarget).parentElement).getAttribute("zähler")!;
-    localStorage.setItem("foto" + j, tier[parseInt(atrributeInLS)].imgSrc + "");
-    localStorage.setItem("name" + j, tier[parseInt(atrributeInLS)].Name + "");
-    localStorage.setItem("preis" + j, tier[parseInt(atrributeInLS)].preis + "");
-    j++;
 
 
     function handlerBeGone(_event: Event): void {

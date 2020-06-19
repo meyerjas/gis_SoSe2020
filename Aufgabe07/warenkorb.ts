@@ -4,7 +4,7 @@ namespace aufgabe07 {
     let hinterlegen: number = 0;
 
 
-    for (let i: number = 0; i < localStorage.imWarenkorb; i++) {
+    for (let i: number = 0; i < parseInt(localStorage.getItem("imWarenkorb")!); i++) {
 
         let newDiv: HTMLDivElement = document.createElement("div");
         newDiv.id = "artikel" + i;
@@ -56,7 +56,6 @@ namespace aufgabe07 {
         summe = 0;
         gesamtPreis.innerHTML = "Gesamtpreis: " + summe + "€";
     }
-
 
     }
 

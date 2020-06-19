@@ -1,0 +1,45 @@
+body {
+    background-image: url(wiese.jpg);
+}
+
+#logo {
+    border-radius: 100%;
+}
+
+#logobox {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Artikel {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.Artikel>div {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    background-color: lightgoldenrodyellow;
+    padding: 20px;
+    border-radius: 25px;
+    margin: 20px;
+    width: 200px;
+    height: 350px;
+}
+
+div.Artikel>div img {
+    width: 200px;
+}
+
+div.Artikel.Name {
+    font-size: 30px;
+}

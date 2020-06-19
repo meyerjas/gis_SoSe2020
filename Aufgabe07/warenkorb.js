@@ -3,7 +3,7 @@ var aufgabe07;
 (function (aufgabe07) {
     let summe = 0;
     let hinterlegen = 0;
-    for (let i = 0; i < localStorage.imWarenkorb; i++) {
+    for (let i = 0; i < parseInt(localStorage.getItem("imWarenkorb")); i++) {
         let newDiv = document.createElement("div");
         newDiv.id = "artikel" + i;
         document.getElementById("TiereImWagen")?.appendChild(newDiv);

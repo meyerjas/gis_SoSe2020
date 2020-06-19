@@ -60,7 +60,6 @@ var aufgabe07;
         imWarenkorb++;
         let target = _event.target;
         let artikelIndex = parseInt(target.getAttribute("artikelIndex"));
-        //zählerAnzeige.style.display = "block";
         if (localStorage.imWarenkorb) {
             localStorage.imWarenkorb = Number(localStorage.imWarenkorb) + 1;
         }
@@ -77,12 +76,12 @@ var aufgabe07;
         gesamtPreis = aufgabe07.tier[artikelIndex].preis + gesamtPreis;
         console.log("Gesamtpreis:" + gesamtPreis + "€");
         localStorage.setItem("gesamtPreis", gesamtPreis.toString());
+        let atrributeInLS = _event.currentTarget.parentElement.getAttribute("zähler");
+        localStorage.setItem("foto" + j, aufgabe07.tier[parseInt(atrributeInLS)].imgSrc + "");
+        localStorage.setItem("name" + j, aufgabe07.tier[parseInt(atrributeInLS)].Name + "");
+        localStorage.setItem("preis" + j, aufgabe07.tier[parseInt(atrributeInLS)].preis + "");
+        j++;
     }
-    let atrributeInLS = _event.currentTarget.parentElement.getAttribute("zähler");
-    localStorage.setItem("foto" + j, aufgabe07.tier[parseInt(atrributeInLS)].imgSrc + "");
-    localStorage.setItem("name" + j, aufgabe07.tier[parseInt(atrributeInLS)].Name + "");
-    localStorage.setItem("preis" + j, aufgabe07.tier[parseInt(atrributeInLS)].preis + "");
-    j++;
     function handlerBeGone(_event) {
         let target = _event.target;
         let kategorie = target.getAttribute("href");

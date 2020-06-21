@@ -4,7 +4,7 @@ namespace aufgabe08 {
 
     async function handleData(): Promise<void>  {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gisjas.herokuapp.com/";
+        let url: string = "https://gisjas.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any> formData);
         url = url + "?" + query.toString();
 

@@ -12,10 +12,11 @@ namespace aufgabe08 {
         let ausgabe: string = await response.text();
         console.log(ausgabe);
 
+        for (let entry of formData) {
+            console.log(entry);
+            console.log("name: " + entry[0]);
+            console.log("value: " + entry[1]);
     }
 
-
-
-
-
+}
 }

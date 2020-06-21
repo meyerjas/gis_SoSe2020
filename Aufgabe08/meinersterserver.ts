@@ -9,8 +9,8 @@ namespace aufgabe08 {
         url = url + "?" + query.toString();
 
         let response: Response = await fetch(url);
-        let response2: string = await response.text();
-        console.log(response2);
+        let ausgabe: string = await response.text();
+        console.log(ausgabe);
 
     }
 

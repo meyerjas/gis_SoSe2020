@@ -1,0 +1,23 @@
+{
+    "name": "gis_sose2020",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "tslint": "^6.1.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node Aufgabe08/meinersterserver.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/meyerjas/gis_SoSe2020.git"
+    },
+    "author": "jasmin meyer",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/meyerjas/gis_SoSe2020/issues"
+    },
+    "homepage": "https://github.com/meyerjas/gis_SoSe2020#readme"
+}

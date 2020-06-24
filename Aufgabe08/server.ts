@@ -18,11 +18,12 @@ export namespace A08Server {
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //
     console.log("I hear voices!"); //wenn die funktion handleRequest ausgeführt wird, gibt die Konsole "I hear voices!" aus.
-    console.log(_request.url);
+  
     _response.setHeader("content-type", "text/html; charset=utf-8"); //Antwort ist vom typ Text
     _response.setHeader("Access-Control-Allow-Origin", "*"); //Alle können auf die Antwort zugreifen
 
     _response.write(_request.url); //URL wird geschrieben
+    console.log("Ausgabe: " + _request.url);
 
     _response.end(); //Antwort wird an den Client geschickt
   }

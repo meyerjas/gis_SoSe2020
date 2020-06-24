@@ -9,7 +9,7 @@
     },
     "devDependencies": {},
     "scripts": {
-        "start": "node Aufgabe08/meinersterserver.js"
+        "start": "node Aufgabe08/server.js"
     },
     "repository": {
         "type": "git",

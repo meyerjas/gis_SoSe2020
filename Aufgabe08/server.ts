@@ -1,5 +1,6 @@
 import * as Http from "http"; //http - Modul laden mit allen Finktionalitäten
 
+
 export namespace A08Server {
   console.log("Starting server"); // Gibt in der Konsole aus "Starting Server"
   let port: number = Number(process.env.PORT); //Sucht ein Port
@@ -16,8 +17,8 @@ export namespace A08Server {
   }
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //
-    console.log(_request.url); //wenn die funktion handleRequest ausgeführt wird, gibt die Konsole "I hear voices!" aus bzw jetzt die url.
-
+    console.log("I hear voices!"); //wenn die funktion handleRequest ausgeführt wird, gibt die Konsole "I hear voices!" aus.
+    console.log(URL);
     _response.setHeader("content-type", "text/html; charset=utf-8"); //Antwort ist vom typ Text
     _response.setHeader("Access-Control-Allow-Origin", "*"); //Alle können auf die Antwort zugreifen
 

@@ -5,8 +5,8 @@ namespace aufgabe09 {
 
     async function handleHTMLData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        //let url: string = "https://gisjas.herokuapp.com";
-        let url: string = "http://localhost:8100";
+        let url: string = "https://gisjas.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url = url +  "/html";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
@@ -20,8 +20,8 @@ namespace aufgabe09 {
 
     async function handleJsonData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        //let url: string = "https://gisjas.herokuapp.com";
-        let url: string = "http://localhost:8100";
+        let url: string = "https://gisjas.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url = url + "/json";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);

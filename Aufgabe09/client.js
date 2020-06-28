@@ -5,8 +5,8 @@ var aufgabe09;
     document.getElementById("jsonButton")?.addEventListener("click", handleJsonData);
     async function handleHTMLData() {
         let formData = new FormData(document.forms[0]);
-        //let url: string = "https://gisjas.herokuapp.com";
-        let url = "http://localhost:8100";
+        let url = "https://gisjas.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url = url + "/html";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
@@ -18,8 +18,8 @@ var aufgabe09;
     }
     async function handleJsonData() {
         let formData = new FormData(document.forms[0]);
-        //let url: string = "https://gisjas.herokuapp.com";
-        let url = "http://localhost:8100";
+        let url = "https://gisjas.herokuapp.com";
+        //let url: string = "http://localhost:8100";
         url = url + "/json";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
